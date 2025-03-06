@@ -29,7 +29,7 @@ class PredictionViewSet(viewsets.ViewSet):
                 return Response({'error': 'User input is required'}, status=400)
 
             # Convert input to tensor (ensure it's a float)
-            user_input_tensor = torch.tensor([[float(user_input)]], dtype=torch.float32)  # Reshape to (1,1)
+            user_input_tensor = torch.tensor([[float(user_input)]])  # Reshape to (1,1)
 
             # Get prediction
             with torch.no_grad():
